@@ -62,8 +62,16 @@ export default class Header extends React.Component {
 
           <Link id="RouterNavLink" to="/main/basiclife">
             <Menu.Item
-              name="Basic Life"
-              active={activeItem === 'Basic Life'}
+              name="Login Form"
+              active={activeItem === 'Login Form'}
+              onClick={this.handleItemClick}
+            />
+          </Link>
+
+          <Link id="RouterNavLink" to="/main/login">
+            <Menu.Item
+              name="Basic Form"
+              active={activeItem === 'Basic Form'}
               onClick={this.handleItemClick}
             />
           </Link>

@@ -22,6 +22,7 @@ const Basic = React.lazy(() => import('../ClassComponent/Basic'));
 const BasicState = React.lazy(() => import('../State/BasicState'));
 const LifeCycle = React.lazy(() => import('../LifeCyle/BasicLife'));
 const BasicEvent = React.lazy(() => import('../EventHandling/BasicForm'));
+const Form = React.lazy(() => import('../Form/Form'));
 const NotFound = React.lazy(() => import('./NotFound'));
 
 const Main = () => {
@@ -40,6 +41,7 @@ const Main = () => {
             <BasicState path={`${path}/basicstate`} />
             <LifeCycle path={`${path}/basiclife`} />
             <BasicEvent path={`${path}/basicevent`} />
+            <Form path={`${path}/login`} />
             <NotFound />
           </Switch>
         </Suspense>
