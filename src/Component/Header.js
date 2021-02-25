@@ -12,7 +12,7 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <Menu secondary>
-          <Link to="/main">
+          <Link id="RouterNavLink" to="/main">
             <Menu.Item
               name="Home"
               active={activeItem === 'home'}
@@ -20,7 +20,7 @@ export default class Header extends React.Component {
             />
           </Link>
 
-          <Link to="/main/about">
+          <Link id="RouterNavLink" to="/main/about">
             <Menu.Item
               name="About"
               active={activeItem === 'About'}
@@ -28,7 +28,7 @@ export default class Header extends React.Component {
             />
           </Link>
 
-          <Link to="/main/dynamic/Sabban">
+          <Link id="RouterNavLink" to="/main/dynamic/Sabban">
             <Menu.Item
               name="Dynamic"
               active={activeItem === 'Dynamic'}
@@ -36,7 +36,7 @@ export default class Header extends React.Component {
             />
           </Link>
 
-          <Link to="/main/basic">
+          <Link id="RouterNavLink" to="/main/basic">
             <Menu.Item
               name="Basic Class"
               active={activeItem === 'Basic Class'}
@@ -44,7 +44,7 @@ export default class Header extends React.Component {
             />
           </Link>
 
-          <Link to="/main/basicstate">
+          <Link id="RouterNavLink" to="/main/basicstate">
             <Menu.Item
               name="Basic State"
               active={activeItem === 'Basic State'}
@@ -52,7 +52,15 @@ export default class Header extends React.Component {
             />
           </Link>
 
-          <Link to="/main/basiclife">
+          <Link id="RouterNavLink" to="/main/basicevent">
+            <Menu.Item
+              name="Basic Event"
+              active={activeItem === 'Basic Event'}
+              onClick={this.handleItemClick}
+            />
+          </Link>
+
+          <Link id="RouterNavLink" to="/main/basiclife">
             <Menu.Item
               name="Basic Life"
               active={activeItem === 'Basic Life'}

@@ -21,11 +21,11 @@ const Dynamic = React.lazy(() => import('./Dynamic'));
 const Basic = React.lazy(() => import('../ClassComponent/Basic'));
 const BasicState = React.lazy(() => import('../State/BasicState'));
 const LifeCycle = React.lazy(() => import('../LifeCyle/BasicLife'));
+const BasicEvent = React.lazy(() => import('../EventHandling/BasicForm'));
 const NotFound = React.lazy(() => import('./NotFound'));
 
 const Main = () => {
   let { path } = useRouteMatch();
-  console.log(path);
   return (
     <div>
       <Header />
@@ -39,6 +39,7 @@ const Main = () => {
             <Basic path={`${path}/basic`} />
             <BasicState path={`${path}/basicstate`} />
             <LifeCycle path={`${path}/basiclife`} />
+            <BasicEvent path={`${path}/basicevent`} />
             <NotFound />
           </Switch>
         </Suspense>
