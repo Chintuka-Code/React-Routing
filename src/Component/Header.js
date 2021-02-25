@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Input } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 export default class Header extends React.Component {
   state = { activeItem: 'home' };
@@ -32,6 +32,22 @@ export default class Header extends React.Component {
             <Menu.Item
               name="Dynamic"
               active={activeItem === 'Dynamic'}
+              onClick={this.handleItemClick}
+            />
+          </Link>
+
+          <Link to="/main/basic">
+            <Menu.Item
+              name="Basic Class"
+              active={activeItem === 'Basic Class'}
+              onClick={this.handleItemClick}
+            />
+          </Link>
+
+          <Link to="/main/basicstate">
+            <Menu.Item
+              name="Basic State"
+              active={activeItem === 'Basic State'}
               onClick={this.handleItemClick}
             />
           </Link>
