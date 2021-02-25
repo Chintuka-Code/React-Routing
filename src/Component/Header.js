@@ -52,6 +52,14 @@ export default class Header extends React.Component {
             />
           </Link>
 
+          <Link to="/main/basiclife">
+            <Menu.Item
+              name="Basic Life"
+              active={activeItem === 'Basic Life'}
+              onClick={this.handleItemClick}
+            />
+          </Link>
+
           <Menu.Menu position="right">
             {/* <Menu.Item>
             <Input icon="search" placeholder="Search..." />

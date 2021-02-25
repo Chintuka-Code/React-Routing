@@ -20,6 +20,7 @@ const Term = React.lazy(() => import('./Term'));
 const Dynamic = React.lazy(() => import('./Dynamic'));
 const Basic = React.lazy(() => import('../ClassComponent/Basic'));
 const BasicState = React.lazy(() => import('../State/BasicState'));
+const LifeCycle = React.lazy(() => import('../LifeCyle/BasicLife'));
 const NotFound = React.lazy(() => import('./NotFound'));
 
 const Main = () => {
@@ -37,6 +38,7 @@ const Main = () => {
             <Dynamic path={`${path}/dynamic/:name`} />
             <Basic path={`${path}/basic`} />
             <BasicState path={`${path}/basicstate`} />
+            <LifeCycle path={`${path}/basiclife`} />
             <NotFound />
           </Switch>
         </Suspense>
