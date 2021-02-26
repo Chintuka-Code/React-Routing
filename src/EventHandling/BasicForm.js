@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 class BasicEvent extends React.Component {
-  state = { input: ' ', data: [] };
+  state = { input: ' ', data: [], message: '', status: null };
   inputchange(event) {
     this.setState({ input: event.target.value });
     console.log(event.target.value);
@@ -10,37 +10,38 @@ class BasicEvent extends React.Component {
 
   async onFormSubmit(event) {
     event.preventDefault();
-    const data = await axios.get(
-      'https://api.endlessmedical.com/v1/dx/GetOutcomes'
-    );
-    if (data.data.status === 'ok') {
-      this.setState({ data: data.data.data });
-      console.log(this.state.data);
+    try {
+      const data = await axios.get(
+        'https://api.endlessmedical.com/v1/dx/GetOutcomes'
+      );
+      if (data.data.status === 'ok') {
+        this.setState({ data: data.data.data });
+        console.log(this.state.data);
+      }
+    } catch (error) {
+      this.setState({ status: 404 });
     }
   }
 
   render() {
-    return (
-      <div>
-        <form onSubmit={this.onFormSubmit.bind(this)}>
-          <input
-            type="text"
-            placeholder="Search"
-            value={this.state.input}
-            onChange={(e) => this.setState({ input: e.target.value })}
-          />
-          <input type="submit" />
-        </form>
+    if (this.state.status === 404) {
+      return <h1> Some Error </h1>;
+    } else {
+      return (
         <div>
-          {this.state.data.map((res) => (
-            <div>
-              <h1>This is a Map</h1>
-              <h1>{res}</h1>
-            </div>
-          ))}
+          <form onSubmit={this.onFormSubmit.bind(this)}>
+            <input
+              type="text"
+              placeholder="Search"
+              value={this.state.input}
+              onChange={(e) => this.setState({ input: e.target.value })}
+            />
+            <input type="submit" />
+          </form>
+          <h1> {this.state.input} </h1>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
